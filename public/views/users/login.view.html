@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Cradle to Crayons Creche Login</h1>
+
+    <div ng-show="model.message" class="alert alert-danger">
+        {{model.message}}
+    </div>
+
+    <label for="email">email</label>
+    <div ng-show=model.emptyemail class="alert alert-danger">
+        {{model.emptyemail}}
+    </div>
+    <input autocorrect="off"
+           autocapitalize="off"
+           ng-model="email"
+           autocomplete="off"
+           spellcheck="false"
+           id="email"
+           placeholder="email"
+           class="form-control"/>
+
+    <div ng-show=model.emptyPassword class="alert alert-danger">
+        {{model.emptyPassword}}
+    </div>
+    <label>Password</label>
+    <input ng-model="password"
+           class="form-control"
+           placeholder="password"
+           type=
+                   "password"/>
+    <div class="login-buttons"> 
+        <a data-ng-click="model.login(email, password)"
+        class="btn  btn-primary">Login</a>
+
+        <a href="#!/register" class="btn  btn-success">Register</a>
+    </div>
+    
+</div>

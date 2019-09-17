@@ -1,0 +1,25 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div class="container-fluid">
+    <label for="description">Description</label>
+    <input id="description"
+        ng-model="model.fees.description"
+        class="form-control"/>
+    <label for="datePaid">Date Paid</label>
+    <input id="datePaid"
+        ng-model="model.fees.datePaid"
+        class="form-control"/>
+ <label for="amountPaid">Amount Paid</label>
+        <input id="amountPaid"
+         ng-model="model.fees.amountPaid"    
+        class="form-control"/>
+        <label for="student">Student ID</label>
+    <input id="student"
+        ng-model="model.fees.student"
+            class="form-control"/>
+    <a
+            data-ng-click="model.updateFees(model.fees)"
+            class="btn btn-block btn-success">
+        Update
+    </a>
+</div>

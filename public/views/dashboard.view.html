@@ -1,0 +1,35 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div class="container-fluid">
+    <h3 style="text-align: center"> Welcome to your dashboard</h3>
+    <ul class="list-group">
+        <li ng-if="model.isGuardian" class="list-group-item">
+            <a href="#!/user/{{model.currentUser._id}}/students" class="btn btn-block btn-success">View Wards</a>
+        </li>
+        <li ng-if="model.isGuardian" class="list-group-item">
+            <a href="#!/user/{{model.currentUser._id}}/students/new" class="btn btn-block btn-success">Register a new ward</a>
+        </li>
+        <li ng-if="model.isInstructor" class="list-group-item">
+            <a href="#!/instructor/{{model.currentUser._id}}/activities" class="btn btn-block btn-success">Class Activities</a>
+        </li>
+        <li ng-if="model.isInstructor" class="list-group-item">
+            <a href="#!/students/new" class="btn btn-block btn-success">Register Students</a>
+        </li>
+        <li ng-if="model.isAdmin" class="list-group-item">
+            <a href="#!/users/new" class="btn btn-block btn-success">Create User</a>
+        </li>
+        <li ng-if="model.isAdmin" class="list-group-item">
+            <a href="#!/users" class="btn btn-block btn-success">All Users</a>
+        </li>
+        <li ng-if="model.isAdmin" class="list-group-item">
+            <a href="#!/fees/new" class="btn btn-block btn-success">Add New Fees</a>
+        </li>
+        <li ng-if="model.isAdmin" class="list-group-item">
+            <a href="#!/fees" class="btn btn-block btn-success">View Fees </a>
+        </li>
+        <li ng-if="model.isAdmin" class="list-group-item">
+            <a href="#!/students" class="btn btn-block btn-success">View Students </a>
+        </li>
+        
+    </ul>
+</div>

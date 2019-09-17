@@ -1,0 +1,54 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div class="container-fluid">
+    <ul class="list-group">
+        <li class="list-group-item active">
+            <div class="row">
+                <div class="col-sm-3">
+                    Description
+                </div>
+                <div class="col-sm-3">
+                    Date Paid
+                </div>
+                <div class="col-sm-2">
+                    Amount Paid 
+                </div>
+                <div class="col-sm-3">
+                    Student ID 
+                </div>
+                <div class="col-sm-1">
+                    <a style="color: white" href="#!/fees/new">
+                        <span class="glyphicon glyphicon-plus pull-right"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li ng-repeat="fee in model.fees" class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3">
+                    {{fee.description}}
+                </div>
+                <div class="col-sm-3">
+                    {{fee.datePaid}}
+                </div>
+                <div class="col-sm-2">
+                    {{fee.amountPaid}}
+                </div>
+                <div class="col-sm-3">
+                    {{fee.student}}
+                </div>
+                <div class="col-sm-1">
+                    <a style="color: purple" href="#!/fees/edit/{{fees._id}}">
+                        <span class="glyphicon glyphicon-pencil pull-right"></span>
+                    </a>
+                </div>
+                <div class="col-sm-1">
+                    <a style="color: purple" href="#!/fees/edit">
+                        <span class="glyphicon glyphicon-remove pull-right"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+

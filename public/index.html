@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="c2csms">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1,
+          minimum-scale=1, width=device-width, height=device-height,
+          target-densitydpi=device-dpi"
+    />
+
+    <!-- Angular -->
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular/angular-route.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <!---- Student ---->
+    <script src="views/students/student-list.controller.js"></script>
+    <script src="views/students/new-student.controller.js"></script>
+    <script src="services/student-service.client.js"></script>
+    <script src="views/students/edit-student.controller.js"></script>
+
+
+    <!----- Performance ------>
+    <script src="views/performance/performance-list.controller.js"></script>
+    <script src="services/performance-service.client.js"></script>
+    <script src="views/performance/new-performance.controller.js"></script>
+    <script src="views/performance/edit-performance.controller.js"></script>
+
+    <!----- Users ------>
+    <script src="views/users/new-user.controller.js"></script>
+    <script src="services/user-service.client.js"></script>
+    <script src="views/users/user-list.controller.js"></script>
+    <script src="views/users/edit-user.controller.js"></script>
+
+    <!---- Fees ---->
+    <script src="views/fees/fees-list.controller.js"></script>
+    <script src="views/fees/new-fee.controller.js"></script>
+    <script src="services/fees-service.client.js"></script>
+    <script src="views/fees/edit-fees.controller.js"></script>
+
+    <!---- Activities ---->
+    <script src="views/activities/activities-list.controller.js"></script>
+    <script src="views/activities/new-activities.controller.js"></script>
+    <script src="services/activities-service.client.js"></script>
+    <script src="views/activities/edit-activities.controller.js"></script>
+
+    <!----- Login ------>
+    <script src="views/users/login.controller.js"></script>
+    <script src="services/user-service.client.js"></script>
+
+    <!----- Register ------>
+    <script src="views/users/register.controller.js"></script>
+
+    <!--Dashboard-->
+    <script src="views/dashboard.controller.js"></script>
+
+    <!--Profile-->
+    <script src='views/users/profile.controller.js'></script>
+
+    <script src="views/navbar.controller.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="vendor/bootstrap/theme.css" rel="stylesheet">-->
+
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+      <div class="container main-body" ng-view ></div>
+</body>
+</html>

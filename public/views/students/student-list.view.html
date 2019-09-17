@@ -1,0 +1,65 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div class="container-fluid">
+    <ul class="list-group">
+        <li class="list-group-item active">
+            <div class="row">
+                <div class="col-sm-3">
+                    Forename
+                </div>
+                <div class="col-sm-3">
+                    Surname
+                </div>
+                <div class="col-sm-3">
+                    BirthDate
+                </div>
+                <div class="col-sm-2">
+                    Address
+                </div>
+                <div class="col-sm-1">
+                    <a ng-hide="model.userId" style="color: purple" href="#!/students/new">
+                        <span class="glyphicon glyphicon-plus pull-right"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li ng-repeat="student in model.students" class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3">
+                    {{student.firstName}}
+                </div>
+                <div class="col-sm-3">
+                    {{student.lastName}}
+                </div>
+                <div class="col-sm-3">
+                    {{student.dateOfBirth | date : 'mediumDate'}}
+                </div>
+                <div class="col-sm-2">
+                    {{student.homeAddress}}
+                </div>
+                <div ng-show="model.userId">
+                    <div class="col-sm-1">
+                        <a style="color: purple" href="#!/user/{{model.userId}}/student/{{student._id}}">
+                            <span class="glyphicon glyphicon-eye-open pull-right"></span>
+                        </a>
+                    </div>
+                </div>
+                <div ng-hide="model.userId">
+                    <div class="col-sm-1">
+                        <a style="color: purple" href="#!/students/{{student._id}}">
+                            <span class="glyphicon glyphicon-pencil pull-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div ng-show="model.userId">
+        <a href="#!/user/{{model.userId}}/students/new"
+           class="btn btn-success">
+            Register a new ward
+        </a>
+    </div>
+</div>
+

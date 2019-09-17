@@ -1,0 +1,29 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div class="container-fluid">
+    <label for="name">Name</label>
+    <input id="name"
+           ng-model="model.activities.name"
+           class="form-control"/>
+    <label for="term">Term</label>
+    <input id="term"
+           ng-model="model.activities.term"
+           class="form-control"/>
+    <label for="year">Year</label>
+    <input id="year"
+           ng-model="model.activities.year"
+           class="form-control"/>
+    <label for="description">Description</label>
+    <input id="description"
+           ng-model="model.activities.description"
+           class="form-control"/>
+    <label for="instructor">Instructor ID</label>
+    <input id="instructor"
+           ng-model="model.activities.instructor"
+           ng-readonly="model.isReadOnly"
+           class="form-control"/>
+    <a data-ng-click="model.createActivities(model.activities)"
+       class="btn btn-block btn-success">
+        Create
+    </a>
+</div>

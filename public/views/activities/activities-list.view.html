@@ -1,0 +1,49 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div class="container-fluid">
+    <ul class="list-group">
+        <li class="list-group-item active">
+            <div class="row">
+                <div class="col-sm-3">
+                    Name
+                </div>
+                <div class="col-sm-2">
+                    Section
+                </div>
+                <div class="col-sm-3">
+                    Description
+                </div>
+                <div class="col-sm-2">
+                    Instructor
+                </div>
+                <div class="col-sm-2">
+                    <a style="color: white" href="#!instructor/{{model.userId}}/activities/new">
+                        <span class="glyphicon glyphicon-plus pull-right"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li ng-repeat="activities in model.activities" class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3">
+                    {{activities.name}}
+                </div>
+                <div class="col-sm-2">
+                    {{activities.year}} {{activities.term}}
+                </div>
+                <div class="col-sm-3">
+                    {{activities.description}}
+                </div>
+                <div class="col-sm-2">
+                    {{activities.instructor}}
+                </div>
+                <div class="col-sm-2">
+                    <a style="color: purple" href="#!/instructor/{{model.userId}}/activities/{{activities._id}}">
+                        <span class="glyphicon glyphicon-eye-open pull-right"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+

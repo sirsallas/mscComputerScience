@@ -1,0 +1,43 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div>
+    <label for="guardian">Primary Guardian</label>
+    <input id="guardian"
+           ng-model="model.student.primaryGuardian"
+           ng-readonly="model.isReadOnly"
+           class="form-control"/>
+    <label for="firstName">First Name</label>
+    <input id="firstName"
+           ng-model="model.student.firstName"
+           class="form-control"/>
+    <label for="lastName">Last Name</label>
+    <input id="lastName"
+           ng-model="model.student.lastName"
+           class="form-control"/>
+    <label for="dateOfBirth">Date Of Birth</label>
+    <input id="dateOfBirth"
+           ng-model="model.student.dateOfBirth"
+           type="date"
+           class="form-control"/>
+    <label for="homeAddress">Home Address</label>
+    <input id="homeAddress"
+           ng-model="model.student.homeAddress"
+           class="form-control"/>
+    <label for="placeOfBirth">Place Of Birth</label>
+    <input id="placeOfBirth"
+           ng-model="model.student.placeOfBirth"
+           class="form-control"/>
+    <label for="nationality">Nationality</label>
+    <input id="nationality"
+           ng-model="model.student.nationality"
+           class="form-control"/>
+    <label for="allergies">Allergies</label>
+    <input id="allergies"
+           ng-model="model.student.allergies"
+           class="form-control"/>
+    <a data-ng-click="model.createStudent(model.student)"
+       class="btn btn-block btn-success">
+        Create
+    </a>
+
+</div>

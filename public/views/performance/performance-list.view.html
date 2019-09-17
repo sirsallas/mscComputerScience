@@ -1,0 +1,70 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div class="container-fluid">
+    <ul class="list-group">
+        <li class="list-group-item active">
+            <div class="row">
+                <div class="col-sm-3">
+                    First Name
+                </div>
+                <div class="col-sm-3">
+                    Last Name
+                </div>
+                <div class="col-sm-2">
+                    Grade
+                </div>
+                <div class="col-sm-3">
+                    Attendance
+                </div>
+                <div class="col-sm-1">
+                    <div ng-show="model.userId">
+                        <a style="color: white"
+                           href="#!/instructor/{{model.userId}}/activities/{{model.activityId}}/performance/new">
+                            <span class="glyphicon glyphicon-plus pull-right"></span>
+                        </a>
+                    </div>
+                    <div ng-hide="model.userId">
+                        <a style="color: white" href="#!/performance/new">
+                            <span class="glyphicon glyphicon-plus pull-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li ng-repeat="performance in model.performances" class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3">
+                    {{performance.student.firstName}}
+                </div>
+                <div class="col-sm-3">
+                    {{performance.student.lastName}}
+                </div>
+                <div class="col-sm-2">
+                    {{performance.grade}}
+                </div>
+                <div class="col-sm-3">
+                    {{performance.attendance}}
+                </div>
+                <div class="col-sm-1 pull-right">
+                    <div ng-hide="model.userId" class="col-sm-6">
+                        <a style="color: purple" href="#!/performance/{{performance._id}}">
+                            <span class="glyphicon glyphicon-pencil pull-right"></span>
+                        </a>
+                    </div>
+                    <div ng-show="model.userId" class="col-sm-6">
+                        <a style="color: purple"
+                           href="#!/instructor/{{model.userId}}/activities/{{model.activityId}}/performance/{{performance._id}}">
+                            <span class="glyphicon glyphicon-pencil pull-right"></span>
+                        </a>
+                    </div>
+                    <div class="col-sm-1" class="col-sm-6">
+                        <a style="color: purple" ng-click="model.deletePerformance(performance._id)">
+                            <span class="glyphicon glyphicon-remove pull-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+

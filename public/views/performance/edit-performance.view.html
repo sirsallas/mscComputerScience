@@ -1,0 +1,40 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div class="container-fluid">
+    <div ng-show="model.userId">
+        <label for="student-instructor">Student</label>
+        <input id="student-instructor"
+               ng-model="model.performance.student.firstName"
+               ng-readOnly="model.userId"
+               class="form-control"/>
+        <label for="activity-instructor">Activity</label>
+        <input id="activity-instructor"
+               ng-model="model.performance.student.lastName"
+               ng-readOnly="model.userId"
+               class="form-control"/>
+    </div>
+    <div ng-hide="model.userId">
+        <label for="student">Student ID</label>
+        <input id="student"
+               ng-model="model.performance.student._id"
+               ng-readOnly="model.userId"
+               class="form-control"/>
+        <label for="activity">Activity ID</label>
+        <input id="activity"
+               ng-model="model.performance.activity"
+               ng-readOnly="model.userId"
+               class="form-control"/>
+    </div>
+    <label for="grade">Grade</label>
+    <input id="grade"
+           ng-model="model.performance.grade"
+           class="form-control"/>
+    <label for="attendance">Attendance</label>
+    <input id="attendance"
+           ng-model="model.performance.attendance"
+           class="form-control"/>
+    <a data-ng-click="model.updatePerformance(model.performance)"
+       class="btn btn-block btn-success">
+        Update
+    </a>
+</div>

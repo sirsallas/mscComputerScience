@@ -1,0 +1,95 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div class="container-fluid">
+    <label for="name">Name</label>
+    <input id="name"
+           ng-model="model.activities.name"
+           ng-readOnly="model.isReadOnly"
+           class="form-control"/>
+    <label for="term">Term</label>
+    <input id="term"
+           ng-model="model.activities.term"
+           ng-readOnly="model.isReadOnly"
+           class="form-control"/>
+    <label for="year">Year</label>
+    <input id="year"
+           ng-model="model.activities.year"
+           ng-readOnly="model.isReadOnly"
+           class="form-control"/>
+    <label for="description">Description</label>
+    <input id="description"
+           ng-model="model.activities.description"
+           ng-readOnly="model.isReadOnly"
+           class="form-control"/>
+    <label for="instructor">Instructor ID</label>
+    <input id="instructor"
+           ng-model="model.activities.instructor"
+           ng-readOnly="model.isReadOnly"
+           class="form-control"/>
+    <a ng-click="model.updateActivity(model.activities)"
+       ng-hide="model.isReadOnly"
+       class="btn btn-success">
+        Save
+    </a>
+    <a ng-click="model.toggleEditing()"
+       ng-show="model.isReadOnly"
+       class="btn btn-info">
+        Edit Activity
+    </a>
+    <a ng-show="model.isReadOnly"
+       href="#!/instructor/{{model.userId}}/activities/{{model.activityId}}/performance"
+       class="btn btn-success pull-right">
+        Grades
+    </a>
+    <a ng-click="model.toggleEditing()"
+       ng-hide="model.isReadOnly"
+       class="btn btn-warning">
+        Cancel
+    </a>
+    <br/>
+    <a ng-click="model.deleteActivity(model.activities)"
+       ng-hide="model.isReadOnly"
+       class="btn btn-danger">
+        Delete Activity
+    </a>
+
+    <br/>
+    <br/>
+    <div ng-show="model.userId">
+        <label for="enroll-student">Enroll A Student</label>
+        <select id="enroll-student"
+                class="form-control"
+                ng-model="model.newStudentID"
+                ng-options="student.id as student.name for student in model.availableStudents">
+        </select>
+        <button ng-click="model.enrollStudent(model.newStudentID)" class="btn btn-success">
+            Enroll Student
+        </button>
+    </div>
+
+    <div ng-show="model.userId" class="container-fluid">
+        <h3>Students Enrolled</h3>
+        <ul class="list-group">
+            <li class="list-group-item active">
+                <div class="row">
+                    <div class="col-sm-5">
+                        First Name
+                    </div>
+                    <div class="col-sm-6">
+                        Last Name
+                    </div>
+                </div>
+            </li>
+            <li ng-repeat="student in model.classStudents" class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-5">
+                        {{student.firstName}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{student.lastName}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

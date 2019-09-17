@@ -1,0 +1,111 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div>
+    <label for="firstName">First Name</label>
+    <input id="firstName"
+           ng-model="model.student.firstName"
+           ng-readonly="model.userId"
+           class="form-control"/>
+    <label for="lastName">Last Name</label>
+    <input id="lastName"
+           ng-model="model.student.lastName"
+           ng-readonly="model.userId"
+           class="form-control"/>
+    <label for="dateOfBirth">Date Of Birth</label>
+    <input id="dateOfBirth"
+           ng-model="model.student.dateOfBirth"
+           ng-readonly="model.userId"
+           type="date"
+           class="form-control"/>
+    <label for="homeAddress">Home Address</label>
+    <input id="homeAddress"
+           ng-model="model.student.homeAddress"
+           ng-readonly="model.userId"
+           class="form-control"/>
+    <label for="placeOfBirth">Place Of Birth</label>
+    <input id="placeOfBirth"
+           ng-model="model.student.placeOfBirth"
+           ng-readonly="model.userId"
+           class="form-control"/>
+    <label for="nationality">Nationality</label>
+    <input id="nationality"
+           ng-model="model.student.nationality"
+           ng-readonly="model.userId"
+           class="form-control"/>
+    <label for="allergies">Allergies</label>
+    <input id="allergies"
+           ng-model="model.student.allergies"
+           ng-readonly="model.userId"
+           class="form-control"/>
+
+    <a data-ng-click="model.updateStudent(model.student)"
+       ng-hide="model.userId"
+       class="btn btn-block btn-success">
+        Update
+    </a>
+
+    <div ng-show="model.userId" class="container-fluid">
+        <h3>Ward Performance</h3>
+        <ul class="list-group">
+            <li class="list-group-item active">
+                <div class="row">
+                    <div class="col-sm-5">
+                        Activity Name
+                    </div>
+                    <div class="col-sm-5">
+                        Grade
+                    </div>
+                    <div class="col-sm-2">
+                        Attendance
+                    </div>
+                </div>
+            </li>
+            <li ng-repeat="performance in model.student.performances" class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-5">
+                        {{performance.activity.name}}
+                    </div>
+                    <div class="col-sm-5">
+                        {{performance.grade}}
+                    </div>
+                    <div>
+                        {{performance.attendance}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-show="model.userId" class="container-fluid">
+        <h3>Ward Fees</h3>
+        <ul class="list-group">
+            <li class="list-group-item active">
+                <div class="row">
+                    <div class="col-sm-4">
+                        Fees Description
+                    </div>
+                    <div class="col-sm-4">
+                        Amount
+                    </div>
+                    <div class="col-sm-4">
+                        Date Paid
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{model.studentFees.description}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{model.studentFees.amountPaid}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{model.studentFees.datePaid | date : 'mediumDate'}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>

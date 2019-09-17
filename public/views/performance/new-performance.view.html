@@ -1,0 +1,43 @@
+<div ng-include="'views/navbar.view.html'"></div>
+
+<div class="container-fluid">
+    <div ng-hide="model.activityId">
+        <label for="student">Student ID</label>
+        <input id="student"
+               ng-model="model.performance.student"
+               class="form-control"/>
+    </div>
+    <div ng-show="model.activityId">
+        <label for="student2">Student</label>
+        <select id="student2"
+                class="form-control"
+                ng-model="model.newStudentId"
+                ng-options="student.id as student.name for student in model.availableStudents">
+        </select>
+    </div>
+    <div ng-show="model.activityId">
+        <label for="activity">Activity</label>
+        <input id="activity"
+               ng-model="model.activityName"
+               ng-readOnly="model.isReadOnly"
+               class="form-control"/>
+    </div>
+    <div ng-hide="model.activityId">
+        <label for="activity2">Activity ID</label>
+        <input id="activity2"
+               ng-model="model.performance.activity"
+               class="form-control"/>
+    </div>
+    <label for="grade">Grade</label>
+    <input id="grade"
+           ng-model="model.performance.grade"
+           class="form-control"/>
+    <label for="attendance">Attendance</label>
+    <input id="attendance"
+           ng-model="model.performance.attendance"
+           class="form-control"/>
+    <a data-ng-click="model.createPerformance(model.performance)"
+       class="btn btn-block btn-success">
+        Create
+    </a>
+</div>

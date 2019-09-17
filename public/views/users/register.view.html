@@ -1,0 +1,84 @@
+<div class="container">
+    <h1>Register</h1>
+
+    <div class="alert alert-danger" ng-show="model.error">
+        <div class="text-center">
+            {{model.error}}
+        </div>
+    </div>
+
+    <label for="firstName">First Name</label>
+
+    <div ng-show=model.emptyFirstName class="alert alert-danger">
+        {{model.emptyFirstName}}
+    </div>
+    <input id="firstName"
+           type="text"
+           class="form-control"
+           placeholder="First Name"
+           ng-model="firstName"/>
+
+
+    <label for="lastName">Last Name</label>
+
+
+    <div ng-show=model.emptyLastName class="alert alert-danger">
+        {{model.emptyLastName}}
+    </div>
+    <input id="lastName"
+           type="text"
+           class="form-control"
+           placeholder="Last Name"
+           ng-model="lastName">
+
+    <label for="dateOfBirth">Date of Birth</label>
+    <input id="dateOfBirth"
+           ng-model="model.user.dateOfBirth"
+           class="form-control"
+           type="date"/>
+
+    <label for="email">Email</label>
+
+    <div ng-show=model.emptyEmail class="alert alert-danger">
+        {{model.emptyEmail}}
+    </div>
+    <input id="email"
+           type="text"
+           class="form-control"
+           placeholder="email"
+           ng-model="email">
+
+
+    <label for="password">Password</label>
+
+    <div ng-show=model.emptyPassword class="alert alert-danger">
+        {{model.emptyPassword}}
+    </div>
+
+    <input id="password"
+           type="password"
+           ng-model="password"
+           class="form-control"
+           placeholder="password"/>
+
+    <label for="password2">Verify Password</label>
+
+    <div ng-show=model.emptyPassword2 class="alert alert-danger">
+        {{model.emptyPassword2}}
+    </div>
+
+    <input id="password2"
+           type="password"
+           class="form-control"
+           ng-model="password2"
+           placeholder="verify password"/>
+
+    <div ng-show=model.blankFields class="alert alert-danger">
+        {{model.blankFields}}
+    </div>
+
+    <a ng-click="model.register(firstName, lastName, email, password, password2)"
+       class="btn btn-block btn-primary">Register</a>
+
+    <a href="#!/login" class="btn btn-block btn-success">Cancel</a>
+</div>
