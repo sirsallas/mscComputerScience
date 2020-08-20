@@ -5,7 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "angularjs-datepicker": "^2.1.23",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
